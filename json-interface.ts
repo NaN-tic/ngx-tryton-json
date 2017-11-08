@@ -6,20 +6,20 @@
 
 /*
  Storage of the JSON
- */ 
+ */
 export interface RootSend {
-	root: Array<Send>;
+  root: Array<Send>;
 }
 /*
  Temportary storage of a node
  */
 export interface Send {
-    [method: string]: any[];
+  [method: string]: any[];
 }
 
 /*
  Storage for the write JSON
- */ 
+ */
 export interface Write {
-	[method:string]: any[];
+  [method:string]: any[];
 }
