@@ -21,14 +21,11 @@ export class EncodeJSONWrite {
   * @param {Object} values Values to create or update
   */
   public addNode(method: string, values: any ){
-    console.log("Adding node for method, id, values", method, values);
-
     if (this.write[method] !== undefined) {
       this.write[method].push(values);
     } else {
       this.write[method] = [values]
     }
-    console.log("Current state of the node", this.write)
   }
 
   /**
@@ -36,8 +33,6 @@ export class EncodeJSONWrite {
   * @returns 	JSON object
   */
   public createJSON(){
-    console.log("Generating JSON");
-    console.log(JSON.stringify(this.write))
     return JSON.stringify(this.write);
   }
 }

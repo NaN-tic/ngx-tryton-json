@@ -12,7 +12,6 @@ export class EncodeJSONRead {
   root_send: RootSend;
 
 constructor(){
-    console.log("Initialaizing JSON constructor");
     this.root_send = {
       root: []
     };
@@ -27,7 +26,6 @@ constructor(){
   * @param {any}           limit Limits the number of data returned, default None
   */
   addNode(method: string, domain: any, fields: Array<string>, offset = 0, limit:any = ''){
-    console.log("Adding node for method, domain, fields", method, domain, fields)
     this.root = {}
     this.root[method] = [domain, fields, offset, limit];
     this.root_send.root.push(this.root);
@@ -53,7 +51,6 @@ constructor(){
   * @returns {JSON} JSON created with the nodes
   */
   createJson(){
-    console.log("Generating JSON")
     return JSON.stringify(this.root_send.root)
   }
 }
