@@ -25,9 +25,9 @@ constructor(){
   * @param {number}        offset Sets where to start gathering data after getting it, the default value no offset
   * @param {any}           limit Limits the number of data returned, default None
   */
-  addNode(method: string, domain: any, fields: Array<string>, offset = 0, limit:any = ''){
+  addNode(method: string, domain: any, fields: Array<string>, offset = 0, limit:any = '', order:any=[]){
     this.root = {}
-    this.root[method] = [domain, fields, offset, limit];
+    this.root[method] = [domain, fields, offset, limit, order];
     this.root_send.root.push(this.root);
   }
 
