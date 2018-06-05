@@ -24,10 +24,11 @@ constructor(){
   * @param {Array<string>} fields Fields to get
   * @param {number}        offset Sets where to start gathering data after getting it, the default value no offset
   * @param {any}           limit Limits the number of data returned, default None
+  * @param {false}         count Return total_count
   */
-  addNode(method: string, domain: any, fields: Array<string>, offset = 0, limit:any = '', order:any=[]){
+  addNode(method: string, domain: any, fields: Array<string>, offset = 0, limit:any = '', order:any=[], count:boolean = false ){
     this.root = {}
-    this.root[method] = [domain, fields, offset, limit, order];
+    this.root[method] = [domain, fields, offset, limit, order, count];
     this.root_send.root.push(this.root);
   }
 
